@@ -15,6 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PracticalTest01SecondaryActivity">
+            <action android:name="ro.pub.cs.systems.eim.practicaltest01.PracticalTest01SecondaryActivity" />
+            <category android:name="android.intent.category.DEFAULT" />
+
+        </activity>
     </application>
 
 </manifest>

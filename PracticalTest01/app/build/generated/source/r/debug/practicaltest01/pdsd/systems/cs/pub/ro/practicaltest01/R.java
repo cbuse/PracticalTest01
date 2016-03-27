@@ -828,11 +828,11 @@ containing a value of this type.
         public static final int action_mode_close_button=0x7f0c0024;
         public static final int activity_chooser_view_content=0x7f0c0025;
         public static final int always=0x7f0c000f;
-        public static final int back=0x7f0c0045;
+        public static final int back=0x7f0c0048;
         public static final int beginning=0x7f0c000a;
-        public static final int buton2=0x7f0c0043;
-        public static final int buton3=0x7f0c0044;
-        public static final int button_1=0x7f0c0042;
+        public static final int buton2=0x7f0c0044;
+        public static final int buton3=0x7f0c0045;
+        public static final int button_1=0x7f0c0043;
         public static final int checkbox=0x7f0c002d;
         public static final int collapseActionView=0x7f0c0011;
         public static final int default_activity_button=0x7f0c0028;
@@ -840,6 +840,8 @@ containing a value of this type.
         public static final int disableHome=0x7f0c0008;
         public static final int dropdown=0x7f0c0013;
         public static final int edit_query=0x7f0c0030;
+        public static final int edit_text_left=0x7f0c0046;
+        public static final int edit_text_right=0x7f0c0047;
         public static final int end=0x7f0c000c;
         public static final int expand_activities_button=0x7f0c0026;
         public static final int expanded_menu=0x7f0c002c;
@@ -850,8 +852,10 @@ containing a value of this type.
         public static final int image=0x7f0c0027;
         public static final int left_button=0x7f0c0040;
         public static final int left_text=0x7f0c003e;
+        public static final int linearLayout=0x7f0c0042;
         public static final int listMode=0x7f0c0001;
         public static final int list_item=0x7f0c0029;
+        public static final int message_text_view=0x7f0c0049;
         public static final int middle=0x7f0c000b;
         public static final int navigate_to_secondary_activity=0x7f0c003c;
         public static final int never=0x7f0c000d;
@@ -916,7 +920,8 @@ containing a value of this type.
         public static final int abc_simple_decor=0x7f040017;
         public static final int activity_practical_test01_main=0x7f040018;
         public static final int activity_practical_test01_secondary=0x7f040019;
-        public static final int support_simple_spinner_dropdown_item=0x7f04001a;
+        public static final int activity_service=0x7f04001a;
+        public static final int support_simple_spinner_dropdown_item=0x7f04001b;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;
@@ -936,6 +941,7 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with=0x7f06000b;
         public static final int abc_shareactionprovider_share_with_application=0x7f06000c;
         public static final int app_name=0x7f06000d;
+        public static final int title_activity_service=0x7f06000e;
     }
     public static final class style {
         /**  Customize your theme here. 

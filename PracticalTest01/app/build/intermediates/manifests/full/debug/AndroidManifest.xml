@@ -26,6 +26,29 @@
 
             <category android:name="android.intent.category.DEFAULT" />
         </activity>
+
+        <service
+            android:name="practicaltest01.pdsd.systems.cs.pub.ro.practicaltest01.PracticalTest01Service"
+            android:exported="true" />
+
+        <intent-filter>
+            <action android:name="ro.pub.cs.systems.eim.practicaltest01.PracticalTest01Service" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+             />
+        <activity android:name="practicaltest01.pdsd.systems.cs.pub.ro.practicaltest01.ServiceActivity" >
+            <action android:name="ro.pub.cs.systems.eim.practicaltest01.ServiceActivity" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+
+        <receiver android:name="practicaltest01.pdsd.systems.cs.pub.ro.practicaltest01.PracticalTest01BroadcastReceiver" >
+            <intent-filter>
+                <action android:name="ro.pub.cs.systems.eim.lab05.startedservice.string" />
+            </intent-filter>
+            <!-- other intent filters for other activities -->
+        </receiver>
     </application>
 
 </manifest>

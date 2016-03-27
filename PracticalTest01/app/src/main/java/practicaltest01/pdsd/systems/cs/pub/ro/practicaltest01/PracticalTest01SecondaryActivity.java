@@ -45,6 +45,7 @@ public class PracticalTest01SecondaryActivity extends ActionBarActivity {
 
             DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
             String date = df.format(Calendar.getInstance().getTime());
+
             Log.d("data", date);
             Toast.makeText(getApplicationContext(),ora + date, Toast.LENGTH_LONG).show();
 

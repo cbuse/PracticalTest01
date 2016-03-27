@@ -3,9 +3,13 @@ package practicaltest01.pdsd.systems.cs.pub.ro.practicaltest01;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class PracticalTest01MainActivity extends ActionBarActivity {
@@ -15,7 +19,7 @@ public class PracticalTest01MainActivity extends ActionBarActivity {
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.navigate_to_secondary_activity:
-                    //Intent intent1 = new Intent(getApplicationContext(), PracticalTest01SecondaryActivity.class);
+
 
                     //startActivity(intent1);
                     Intent intent2 = new Intent(getApplicationContext(), PracticalTest01SecondaryActivity.class);
@@ -24,17 +28,73 @@ public class PracticalTest01MainActivity extends ActionBarActivity {
                     startActivityForResult(intent2, Constants.SECONDARY_ACTIVITY_REQUEST_CODE);
 
                     break;
+                //ma duc direct in activtatea cu service
+                case R.id.buton2:
+                    Intent intent22 = new Intent(getApplicationContext(), ServiceActivity.class);
+                    startActivity(intent22);
             }
+
         }
     }
+
+
+    private EditText editTextLeft;
+    private EditText editTextRight;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practical_test01_main);
 
         Button navigateButton = (Button) findViewById(R.id.navigate_to_secondary_activity);
+        Button button2 = (Button) findViewById(R.id.buton2);
 
         navigateButton.setOnClickListener(buttonClickListener);
+        button2.setOnClickListener(buttonClickListener);
+
+        TextView left_text = (TextView)findViewById(R.id.left_text);
+        left_text.setText("zero");
+
+        editTextLeft = (EditText) findViewById(R.id.edit_text_left);
+        editTextRight = (EditText) findViewById(R.id.edit_text_right);
+        editTextLeft.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (charSequence.length() != 0)
+                    editTextRight.setText("");
+                //Toast.makeText(getApplicationContext(), "schimbare", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        editTextRight.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (charSequence.length() != 0)
+                    editTextLeft.setText("");
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
 
     }
 

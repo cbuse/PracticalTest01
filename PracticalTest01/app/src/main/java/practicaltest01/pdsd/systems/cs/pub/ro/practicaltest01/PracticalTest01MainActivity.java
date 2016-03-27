@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class PracticalTest01MainActivity extends ActionBarActivity {
     private ButtonClickListener buttonClickListener = new ButtonClickListener();
@@ -14,9 +15,13 @@ public class PracticalTest01MainActivity extends ActionBarActivity {
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.navigate_to_secondary_activity:
-                    Intent intent = new Intent(getApplicationContext(), PracticalTest01SecondaryActivity.class);
-                    startActivity(intent);
+                    //Intent intent1 = new Intent(getApplicationContext(), PracticalTest01SecondaryActivity.class);
 
+                    //startActivity(intent1);
+                    Intent intent2 = new Intent(getApplicationContext(), PracticalTest01SecondaryActivity.class);
+                    intent2.putExtra("ora_exacta", "Ora exacta este: ");
+
+                    startActivityForResult(intent2, Constants.SECONDARY_ACTIVITY_REQUEST_CODE);
 
                     break;
             }
@@ -27,9 +32,20 @@ public class PracticalTest01MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practical_test01_main);
 
-        Button backButton = (Button) findViewById(R.id.navigate_to_secondary_activity);
-        backButton.setOnClickListener(buttonClickListener);
+        Button navigateButton = (Button) findViewById(R.id.navigate_to_secondary_activity);
+
+        navigateButton.setOnClickListener(buttonClickListener);
+
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        //poate ici trebuie altceva
+        if (requestCode == Constants.SECONDARY_ACTIVITY_REQUEST_CODE) {
+            Toast.makeText(getApplicationContext(),  resultCode + "", Toast.LENGTH_LONG).show();
+        }
+    }
+
 
 
     @Override
